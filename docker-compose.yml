@@ -30,6 +30,7 @@ services:
     volumes:
       - jenkins-data:/var/jenkins_home
       - jenkins-docker-certs:/certs/client:ro
+      - /var/run/docker.sock:/var/run/docker.sock
       - /home/ubuntu/.ssh:/root/.ssh:ro # Mount SSH keys from the host
     ports:
       - "8080:8080"
@@ -44,4 +45,3 @@ networks:
 volumes:
   jenkins-docker-certs:
   jenkins-data:
-  
